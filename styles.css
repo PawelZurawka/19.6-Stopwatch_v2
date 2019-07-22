@@ -1,0 +1,47 @@
+body {
+  margin: 0 auto;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Rajdhani", sans-serif;
+  background-image: url("./images/stopwatch.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  background-color: #5d6589;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+.button {
+  background-color: #6ebf5c;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: bold;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+.button:hover {
+  background-color: #fff;
+}
+
+.results-wrapper {
+  min-height: 70vh;
+  width: 500px;
+  border: 1px solid #6ebf5c;
+  border-radius: 5px;
+  margin: 20px auto;
+  background-color: rgba(93, 101, 137, 0.7);
+}
+
+.results {
+  list-style: none;
+  padding-left: 0;
+}
