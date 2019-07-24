@@ -72,6 +72,10 @@ var Stopwatch = function () {
     value: function stop() {
       this.running = false;
       clearInterval(this.watch);
+    }
+  }, {
+    key: 'lap',
+    value: function lap() {
       this.addResult();
     }
 
@@ -83,7 +87,7 @@ var Stopwatch = function () {
       var list = document.getElementById('results');
       var listItem = document.createElement('li');
       if (
-      //gdy stoper jest zatrzymany nie można dodawać poprzez klikniecie stop tego samego wyniku
+      //gdy stoper jest zatrzymany nie można dodawać poprzez klikniecie lap tego samego wyniku
       (this.times.miliseconds !== 0 || this.times.seconds !== 0 || this.times.minutes !== 0) && (list.childNodes.length === 0 || list.lastChild.innerHTML !== this.format(this.times))) {
         listItem.innerHTML = this.format(this.times);
         list.appendChild(listItem);
@@ -121,6 +125,11 @@ stopButton.addEventListener('click', function () {
   resetButton.classList.remove('disabled');
   resetButton.disabled = false;
   stopwatch.stop();
+});
+
+var lapButton = document.getElementById('lap');
+lapButton.addEventListener('click', function () {
+  stopwatch.lap();
 });
 
 var clear = document.getElementById('clear');

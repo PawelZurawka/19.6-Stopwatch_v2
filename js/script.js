@@ -54,6 +54,9 @@ class Stopwatch {
   stop() {
     this.running = false;
     clearInterval(this.watch);
+  }
+
+  lap() {
     this.addResult();
   }
 
@@ -62,7 +65,7 @@ class Stopwatch {
     var list = document.getElementById('results');
     var listItem = document.createElement('li');
     if (
-      //gdy stoper jest zatrzymany nie można dodawać poprzez klikniecie stop tego samego wyniku
+      //gdy stoper jest zatrzymany nie można dodawać poprzez klikniecie lap tego samego wyniku
       (this.times.miliseconds !== 0 ||
         this.times.seconds !== 0 ||
         this.times.minutes !== 0) &&
@@ -99,6 +102,11 @@ stopButton.addEventListener('click', () => {
   resetButton.classList.remove('disabled');
   resetButton.disabled = false;
   stopwatch.stop();
+});
+
+let lapButton = document.getElementById('lap');
+lapButton.addEventListener('click', () => {
+  stopwatch.lap();
 });
 
 let clear = document.getElementById('clear');
